@@ -13,7 +13,6 @@ def create_app():
    # Secret key for app. In production, NEVER SHARE
    app.config['SECRET_KEY'] = 'mysecretkey' 
    # Database is stored at this* location in f--DB_NAME
-   # Store database in website folder
    # f{string} - if f, anything in {} will return as string
    app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
    # take database and tell it which app we use
