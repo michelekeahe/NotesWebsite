@@ -1,5 +1,5 @@
 from website import create_app
-# Website is a python package bc of the __init__.py -- so you can reference it :)
+# Website is a python package bc of the __init__.py 
 
 app = create_app()
 

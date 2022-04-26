@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from os import path
 from flask_login import LoginManager, login_manager
 
-# define database
+# Define database
 db = SQLAlchemy()
 DB_NAME = "database.db"
 
@@ -15,14 +15,12 @@ def create_app():
    # Database is stored at this* location in f--DB_NAME
    # f{string} - if f, anything in {} will return as string
    app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
-   # take database and tell it which app we use
+
    db.init_app(app)
 
    # import blueprints
    from .views import views
    from .auth import auth
-   # regist blueprints
-   # url_prefix - routes in blueprints such as views or auth would need to be prefixed with what u write down here
    # If you don't want prefix, keep it at '/'
    app.register_blueprint(views, url_prefix='/')
    app.register_blueprint(auth, url_prefix='/')
